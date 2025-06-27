@@ -1,6 +1,6 @@
 /// <reference types="vitest" />
 
-import legacy from '@vitejs/plugin-legacy'
+
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import tailwindcss from "@tailwindcss/vite"
@@ -10,12 +10,27 @@ export default defineConfig({
   // base: "/Trigo/Client/",
   plugins: [
     react(),
-    legacy(),
+
     tailwindcss(),
   ],
   test: {
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/setupTests.ts',
-  }
+  },
+
+  build: {
+    target: 'es2021',
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('mapbox-gl')) return 'mapbox';
+            return 'vendor';
+          }
+        },
+      },
+    },
+  },
 })
