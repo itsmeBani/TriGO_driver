@@ -1,0 +1,160 @@
+/* Basic layout adjustments for the page */
+.ion-padding {
+    padding: 16px;
+  }
+  
+  .google-map {
+    height: 300px; /* Adjust the height of the map */
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #056ab3;
+  }
+  
+  /* Card styles for the content */
+  ion-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  ion-card-content {
+    padding: 20px;
+  }
+  
+  /* Adjustments for IonInput fields */
+  ion-input {
+    margin-top: 15px;
+  }
+  
+  /* IonMenu specific styling */
+  ion-menu {
+    --width: 250px; /* Set width of the menu */
+  }
+  
+  ion-header {
+    background-color: #53bbce;
+    color: white;
+  }
+  
+  ion-title {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  }
+
+  .logo {
+    height: 48px;
+    width: auto;
+    vertical-align: middle;
+    margin-right: 14px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(5, 106, 179, 0.10);
+  }
+
+  ion-toolbar {
+    --background: #53bbce;
+  }
+  
+  ion-item {
+    font-size: 16px;
+  }
+  
+  ion-item ion-label {
+    font-weight: bold;
+  }
+  
+  ion-avatar {
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+  
+  /* Styling for menu icons */
+  ion-avatar ion-icon {
+    font-size: 24px;
+    color: #53bbce;
+  }
+  
+  /* Adjust IonButton in the menu */
+  ion-button {
+    background-color: #0a7e92;
+    color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  /* Style adjustments for the menu toggle button */
+  ion-menu-toggle button {
+    font-size: 18px;
+    font-weight: bold;
+    color: #53bbce;
+  }
+  
+  h2 {
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+  }
+
+/* === Added styles for Home.tsx === */
+
+/* Pickup coordinates display */
+.pickup-coords {
+  margin: 0.5em 0 1em 0;
+  font-size: 1rem;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+/* Booking request card */
+.booking-request-card {
+  margin-top: 1em;
+  border-left: 5px solid #ffc409;
+  box-shadow: 0 2px 8px rgba(255,196,9,0.08);
+}
+
+/* Center the Accept/Reject buttons */
+.booking-request-card .ion-button,
+.booking-request-card ion-button {
+  min-width: 100px;
+  margin: 0 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .google-map {
+    height: 200px;
+  }
+  .pickup-coords {
+    font-size: 0.95rem;
+  }
+}
+
+/* Hide scrollbars for IonContent if needed */
+#main-content {
+  --overflow: auto;
+  background: #f8f9fa;
+}
+
+/* Optional: Responsive tweaks */
+@media (min-width: 768px) {
+  .google-map {
+    height: 400px;
+  }
+
+  ion-input {
+    font-size: 1rem;
+  }
+
+  ion-button {
+    font-size: 1.05rem;
+  }
+}

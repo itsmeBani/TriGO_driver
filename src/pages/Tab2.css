@@ -1,0 +1,131 @@
+.tab2-container {
+  padding: 16px;
+  background: #f7f9fc;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tab2-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.tab2-back-btn {
+  --background: #007bff;
+  --color: white;
+  --border-radius: 8px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 6px;
+  --padding-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: auto;
+  min-width: unset;
+  height: auto;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 22px;
+  color: #2c3e50;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.tab2-booking-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.tab2-booking-list li {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+  word-wrap: break-word;
+}
+
+.tab2-booking-list li:hover {
+  transform: scale(1.01);
+}
+
+.tab2-booking-list strong {
+  font-size: 18px;
+  color: #1e272e;
+}
+
+.tab2-status {
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.tab2-status[data-status='pending'] {
+  background-color: #ffeaa7;
+  color: #d35400;
+}
+
+.tab2-status[data-status='accepted'] {
+  background-color: #d1f5d3;
+  color: #27ae60;
+}
+
+.tab2-status[data-status='rejected'] {
+  background-color: #fddede;
+  color: #c0392b;
+}
+
+.ion-button {
+  margin-top: 8px;
+  --border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (min-width: 600px) {
+  .tab2-booking-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 900px) {
+  .tab2-booking-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .tab2-container {
+    padding: 32px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+}
+@media (max-width: 600px) {
+  .tab2-booking-list {
+    grid-template-columns: 1fr;
+  }
+
+  .tab2-back-btn {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}

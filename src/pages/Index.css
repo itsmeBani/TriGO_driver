@@ -1,0 +1,88 @@
+/* Fullscreen container with gradient background */
+@import "tailwindcss";
+.index-container {
+  --background: #056ab3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* App Title */
+.title {
+  font-size: 36px;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 10px;
+
+  display: block;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Button Wrapper */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+
+}
+
+/* Get Started Button */
+.get-started-btn {
+  width: 80%;
+  max-width: 280px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border-radius: 25px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Button Hover Effect */
+.get-started-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgb(65, 178, 243);
+}
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply Animation */
+.title,
+.get-started-btn {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 30px;
+  }
+
+  .get-started-btn {
+    width: 85%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 26px;
+  }
+
+  .get-started-btn {
+    width: 90%;
+  }
+}

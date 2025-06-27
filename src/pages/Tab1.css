@@ -1,0 +1,130 @@
+/* Profiles.css */
+
+.profile-container {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 2rem;
+}
+
+.back-button {
+  background-color: #0077cc;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  --background-color: #005fa3;
+}
+
+.drivers-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.driver-card {
+  background-color: white;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease;
+}
+
+.driver-card:hover {
+  transform: translateY(-4px);
+}
+
+.driver-card h3 {
+  margin: 0 0 0.5rem;
+  color: #0077cc;
+  font-size: 1.3rem;
+}
+
+.driver-card p {
+  margin: 0.25rem 0;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+strong {
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1rem;
+  }
+
+  .back-button {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .driver-card {
+    padding: 1rem;
+  }
+
+  .driver-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .driver-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .drivers-list {
+    grid-template-columns: 1fr;
+  }
+
+  .driver-card {
+    padding: 0.9rem;
+  }
+}
+@media (max-width: 360px) {
+  .profile-container {
+    padding: 0.5rem;
+  }
+
+  .back-button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .driver-card h3 {
+    font-size: 1rem;
+  }
+
+  .driver-card p {
+    font-size: 0.85rem;
+  }
+}
