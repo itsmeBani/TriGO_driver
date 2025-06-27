@@ -17,6 +17,10 @@ export interface AuthContextValue {
     handleLogOut: () => void;
     currentUser:User | null | undefined
 }
+type FirebaseAuthError = {
+    code: string;
+    message: string;
+};
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
@@ -39,9 +43,8 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({children}) => {
             setLoading(true);
             await signInWithEmailAndPassword(auth, email.trim(), password);
 
-        } catch (err) {
-            // typical Firebase error codes and messages
-            let message = "Login failed. Please try again.";
+        } catch (err:any) {
+            let message = "";
             switch (err.code) {
                 case "auth/user-not-found":
                     message = "No account exists with that e-mail.";
@@ -53,7 +56,7 @@ export const AuthProvider: FC<{ children: ReactNode }> = ({children}) => {
                     message = "E-mail address is not valid.";
                     break;
                 default:
-                    console.error(err);
+                    message = "Login failed. Please try again.";
             }
             setShowError(message);
         } finally {
