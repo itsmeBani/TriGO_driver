@@ -47,7 +47,7 @@ export const STATUS_STYLES: Record<
 const History: React.FC = () => {
 
     const {bookings,loading,error,reload}=useFetchBookings()
-    const { updateStatus} = useUpdateStatus(reload);
+    const { updateStatus} = useUpdateStatus({ onSuccess: reload })
 
     if (loading) {
         return (

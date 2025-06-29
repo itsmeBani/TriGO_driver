@@ -2,9 +2,11 @@
 import { useCallback, useState } from 'react';
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from  "../firebaseConfig"
+import firebase from "firebase/compat";
+import Unsubscribe = firebase.Unsubscribe;
 
 interface useUpdateStatusProps {
-    onSuccess:()=>void
+    onSuccess: () =>  Unsubscribe
 }
 
 export const useUpdateStatus = ({onSuccess} :useUpdateStatusProps) => {
