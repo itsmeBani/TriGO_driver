@@ -35,7 +35,8 @@ export function useFetchBookings() {
     const [loading, setLoading]   = useState(true);
     const [error,   setError]     = useState<Error | null>(null);
 
-    useEffect(() => {
+
+    const Fetch=()=>{
         const q = query(collection(db, 'bookings'), orderBy('createdAt', 'desc'));
 
 
@@ -56,7 +57,10 @@ export function useFetchBookings() {
         );
 
         return unsubscribe;
+    }
+    useEffect(() => {
+       Fetch()
     }, []);
 
-    return { bookings, loading, error };
+    return { bookings, loading, error ,reload:Fetch};
 }
